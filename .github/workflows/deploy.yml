@@ -13,12 +13,12 @@ jobs:
       - name: 📥 Checkout code
         uses: actions/checkout@v3
 
-      - name: 📤 Upload files via FTP
+      - name: 📤 Upload files to ROOT folder
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
+          port: 21
           local-dir: ./
-          server-dir: ${{ secrets.FTP_PATH }}
+          server-dir: /home/mkhaflpw/un.mkhalid.org/
